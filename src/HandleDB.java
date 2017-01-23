@@ -40,6 +40,9 @@ public class HandleDB {
 	/** Used to configure connection to database. */
 	private DatabaseConnector db;
 	
+	/**Used to write an order to the Database: Table orders*/
+	private static final String WRITE_TO_DB = "INSERT INTO orders (custName, custemailID, address, quantity)"+"VALUES(?,?,?,?)";
+	
 	public HandleDB() {
 		Status status = Status.OK;
 		random = new Random(System.currentTimeMillis());
@@ -313,6 +316,26 @@ public class HandleDB {
 	public Status recordOrder(String username,int selectedItem){
 		
 		return null;
+		
+	}
+	
+	public void writeToDataBase(String custName, String emailId, String address, String quantity){
+		int quantityInt = Integer.parseInt(quantity);
+		try {
+			Connection connection = db.getConnection();
+			try (PreparedStatement statement = connection.prepareStatement(WRITE_TO_DB);){
+				statement.setString(1, custName);
+				statement.setString(2, emailId);
+				statement.setString(3, address);
+				statement.setInt(4, quantityInt);
+				statement.executeUpdate();
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 	}
 
