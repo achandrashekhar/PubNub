@@ -47,7 +47,7 @@ public class EmailNotifier {
 				JsonElement jsonquantity = jsonObjectemailNotifier.get("quantity");
 				String quantity = jsonquantity.toString();
 				System.out.println("Got these values in the email Notifier"+id+"and quantity as "+quantity);
-				EmailSender emailSender = new EmailSender(id,"Your Order for an iPhone has been placed ","Hello"+custName+","+ "\n\nyou have placed an order of "+quantity+" iPhone(s). you will recieve it shortyly at the following address you have provided:\n"+address+"\n\nCheers!\nP.S.This Real Time email is the courtesy of PubNub!");
+				EmailSender emailSender = new EmailSender(id,"Your Order for an iPhone has been placed ","Hello "+custName+","+ "\n\nyou have placed an order of "+quantity+" iPhone(s). you will recieve the package at the following address you have provided:\n"+address+"\n\nCheers!\nP.S.This Real Time email is the courtesy of PubNub!");
 			}
 		});
 		

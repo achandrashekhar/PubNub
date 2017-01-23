@@ -41,7 +41,7 @@ public class HandleDB {
 	private DatabaseConnector db;
 	
 	/**Used to write an order to the Database: Table orders*/
-	private static final String WRITE_TO_DB = "INSERT INTO orders (custName, custemailID, address, quantity)"+"VALUES(?,?,?,?)";
+	private static final String WRITE_TO_DB = "INSERT INTO orders (custName, emailId, address, quantity)"+"VALUES(?,?,?,?)";
 	
 	public HandleDB() {
 		Status status = Status.OK;
