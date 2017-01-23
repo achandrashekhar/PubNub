@@ -35,9 +35,19 @@
 <body>
 <form action="/placeOrder" method="post" >
   <div class="form-group">
+    <label for="exampleName">Name</label>
+    <input type="text" class="form-control" name="custName" aria-describedby="emailHelp" placeholder="Your Name">
+    <small id="titleHelp" class="form-text text-muted">Whose name is the order on?</small>
+  </div>
+  <div class="form-group">
     <label for="exampleInputEmail1">Input email Id</label>
     <input type="text" class="form-control" name="email" aria-describedby="emailHelp" placeholder="user@domain.com">
     <small id="titleHelp" class="form-text text-muted">Who should we send the receipt to?</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleName">Address</label>
+    <input type="text" class="form-control" name="address" aria-describedby="emailHelp" placeholder="Address">
+    <small id="titleHelp" class="form-text text-muted">Where do you want this shipped?</small>
   </div>
   <div class="form-group">
     <label for="totalHoursInADay">How many iPhones do you want to order?</label>
