@@ -74,6 +74,8 @@ public class PlaceOrder extends BaseServlet {
 
 		// Get data from the textfields of the html form
 		String newuser = request.getParameter("email");
+		String custName = request.getParameter("custName");
+		String address = request.getParameter("address");
 		int selectedItem = 0;
 		if(request.getParameter("exampleSelect1")!=null)
 		{
@@ -82,6 +84,8 @@ public class PlaceOrder extends BaseServlet {
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("email", newuser);
 		jsonObject.put("quantity", selectedItem);
+		jsonObject.put("custName", custName);
+		jsonObject.put("address", address);
 		
 		//Publish the form information to the channel ORDER_CHANNEL
 		pubnub.publish().channel(ORDER_CHANNEL).message(jsonObject)

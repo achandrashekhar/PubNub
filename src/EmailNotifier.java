@@ -38,12 +38,16 @@ public class EmailNotifier {
 				JsonObject jsonObjectemailNotifier = new JsonObject();
 				System.out.println(arg1.getMessage().getAsJsonObject());
 				jsonObjectemailNotifier = arg1.getMessage().getAsJsonObject();
+				JsonElement jsonCustName = jsonObjectemailNotifier.get("custName");
+				String custName = jsonCustName.toString();
+				JsonElement jsonaddress = jsonObjectemailNotifier.get("address");
+				String address = jsonaddress.toString();
 				JsonElement jsonemailId = jsonObjectemailNotifier.get("email");
 				String id = jsonemailId.toString();
 				JsonElement jsonquantity = jsonObjectemailNotifier.get("quantity");
 				String quantity = jsonquantity.toString();
 				System.out.println("Got these values in the email Notifier"+id+"and quantity as "+quantity);
-				EmailSender emailSender = new EmailSender(id,"Your Order for an iPhone has been placed ","Hello! you have placed "+quantity+"you will recieve it shortyly!");
+				EmailSender emailSender = new EmailSender(id,"Your Order for an iPhone has been placed ","Hello"+custName+","+ "\n\nyou have placed an order of "+quantity+" iPhone(s). you will recieve it shortyly at the following address you have provided:\n"+address+"\n\nCheers!\nP.S.This Real Time email is the courtesy of PubNub!");
 			}
 		});
 		
