@@ -33,7 +33,7 @@ public class ApplicationServer {
 		servletContextHandler.addServlet(LoginServlet.class,"/");
 		servletContextHandler.addServlet(PlaceOrder.class,"/placeOrder");
 		servletContextHandler.addServlet(Confirmation.class,"/confirmation");
-//		servletContextHandler.addServlet(LogoutServlet.class,"/logout");
+		servletContextHandler.addServlet(LogoutServlet.class,"/logout");
 //		servletContextHandler.addServlet(HotelInfo.class,"/hotelInfo");
 //		servletContextHandler.addServlet(RegisterErrorServlet.class,"/registrationError");
 //		servletContextHandler.addServlet(SerchByCityStateCountryServlet.class,"/searchByCityStateCountry");

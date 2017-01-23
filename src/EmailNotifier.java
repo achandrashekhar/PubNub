@@ -41,13 +41,13 @@ public class EmailNotifier {
 				JsonElement jsonemailId = jsonObjectemailNotifier.get("email");
 				String id = jsonemailId.toString();
 				JsonElement jsoncustName = jsonObjectemailNotifier.get("custName");
-				String custName = jsoncustName.toString();
+				String custName = jsoncustName.toString().replaceAll("\"", "");
 				JsonElement jsonaddress = jsonObjectemailNotifier.get("address");
-				String address = jsonaddress.toString();
+				String address = jsonaddress.toString().replaceAll("\"", "");
 				JsonElement jsonquantity = jsonObjectemailNotifier.get("quantity");
 				String quantity = jsonquantity.toString();
 				System.out.println("Got these values in the email Notifier"+id+"and quantity as "+quantity);
-				EmailSender emailSender = new EmailSender(id,"Your Order for an iPhone has been placed ","Hello "+custName+"," +"\n\nYou have placed an order of "+quantity+" iPhones(s) you will recieve it at the following address-\n"+address+"\n\nCheers!\nPS. This Real Time email is the courtesy of PubNub!");
+				EmailSender emailSender = new EmailSender(id,"Your Order for an iPhone has been placed ","Hello "+custName+"," +"\n\nYou have placed an order of "+quantity+" iPhone(s) you will recieve it at the following address-\n"+address+"\n\nCheers!\nPS. This Real Time email is the courtesy of PubNub!");
 			}
 		});
 		

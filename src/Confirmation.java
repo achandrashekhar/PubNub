@@ -31,10 +31,6 @@ import com.pubnub.api.models.consumer.PNStatus;
 @SuppressWarnings("serial")
 public class Confirmation extends BaseServlet {
 	
-	// DatabaseHandler interacts with the MySQL database
-	private static final HandleDB dbhandler = HandleDB.getInstance();
-	private static final PubNub pubnub = PubNubInstance.getInstance();
-	private static final String ORDER_CHANNEL = "OrderChannel";
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
