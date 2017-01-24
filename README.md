@@ -2,7 +2,7 @@
 When I first read about PubNub and saw some tutorials, the Java in me screamed “Observer Pattern!”. The Real Time examples given on the website were pretty amazing! I decided to solve a problem that I had faced just last month. My sister and I booked a ticket for my Mother on a reliable site but never got a confirmation email! We immediately called the airlines, but in vain, they said we should have gotten the email and that their system hadn’t been updated yet! There was a 1000 bucks at stake, but thankfully, we received a confirmation email three days later! I have done something similar. When the Customer places an order, an iPhone in my example, this gets published to a channel, and there are two listeners – An email notifier and a Database Updater that will do their jobs in REAL TIME! The Pub/Sub would look something like this:
 
 
-
+![Alt text](/HTML_PAGES/PubNub - Page 1.jpeg?raw=true "Schematic")
 
 
 
