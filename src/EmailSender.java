@@ -12,6 +12,12 @@ public class EmailSender {
     String emailSubject = null;
     String emailBody = null;
 
+    /**
+     * This class sends put the email and is called by the
+     * emailNotifier subscriber
+     * @author ashi
+     *
+     */
     public EmailSender(String receiverEmail, String Subject, String message) {
         this.receiverEmail = receiverEmail;
         this.emailSubject = Subject;

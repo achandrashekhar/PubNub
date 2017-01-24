@@ -11,6 +11,11 @@ import com.pubnub.api.models.consumer.PNStatus;
 import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
 
+/**
+ * Just a test program I made when I was initially playing around with the API
+ * @author ashi
+ *
+ */
 public class HelloWorld{
 private static final String AWESOME_CHANNEL = "awesomeChannel!";
 

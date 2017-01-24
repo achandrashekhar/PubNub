@@ -12,6 +12,12 @@ import com.pubnub.api.models.consumer.PNStatus;
 import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
 
+/**
+ * This class is a subscriber to the OrderChannel and as soon as a user places an order, this subscriber will recieve the details
+ * and send out the email instantly
+ * @author ashi
+ *
+ */
 public class EmailNotifier {
 	public static void main(String args[]) {
 		PNConfiguration pnConfiguration = new PNConfiguration();
@@ -37,7 +43,7 @@ public class EmailNotifier {
 			public void message(PubNub arg0, PNMessageResult arg1) {
 				JsonObject jsonObjectemailNotifier = new JsonObject();
 				System.out.println(arg1.getMessage().getAsJsonObject());
-				jsonObjectemailNotifier = arg1.getMessage().getAsJsonObject();
+				jsonObjectemailNotifier = arg1.getMessage().getAsJsonObject(); //retrieve the message from the orderChannel
 				JsonElement jsonemailId = jsonObjectemailNotifier.get("email");
 				String id = jsonemailId.toString();
 				JsonElement jsoncustName = jsonObjectemailNotifier.get("custName");

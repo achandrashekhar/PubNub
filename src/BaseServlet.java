@@ -19,11 +19,10 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
 
 /**
- * Provides base functionality to all servlets in this example. 
+ * Provides base functionality to all servlets in this example. This servlet also renders the navigation page
+ * and the footer
  *
  * @see ApplicationServer
  */

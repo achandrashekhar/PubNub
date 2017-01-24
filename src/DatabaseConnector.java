@@ -18,7 +18,6 @@ import java.util.Set;
  * a database.properties file with username, password, database, and hostname.
  * You must also have the tunnel to stargate.cs.usfca.edu running if you are
  * off-campus.
- * @author Prof. Engle
  */
 public class DatabaseConnector {
 

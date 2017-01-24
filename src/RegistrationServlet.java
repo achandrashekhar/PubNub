@@ -24,7 +24,7 @@ import org.apache.velocity.app.VelocityEngine;
 public class RegistrationServlet extends BaseServlet {
 	
 	// DatabaseHandler interacts with the MySQL database
-	private static final DatabaseHandler dbhandler = DatabaseHandler.getInstance();
+	private static final HandleDB dbhandler = HandleDB.getInstance();
 
 
 	@Override
@@ -92,22 +92,4 @@ public class RegistrationServlet extends BaseServlet {
 		}
 	}
 
-	/** Writes and HTML form that shows two textfields and a button to the PrintWriter */
-	private void displayForm(PrintWriter out) {
-		assert out != null;
-
-		out.println("<form action=\"/register\" method=\"post\">"); // the form will be processed by POST
-		out.println("<table border=\"0\">");
-		out.println("\t<tr>");
-		out.println("\t\t<td>Usename:</td>");
-		out.println("\t\t<td><input type=\"text\" name=\"user\" size=\"30\"></td>");
-		out.println("\t</tr>");
-		out.println("\t<tr>");
-		out.println("\t\t<td>Password:</td>");
-		out.println("\t\t<td><input type=\"password\" name=\"pass\" size=\"30\"></td>");
-		out.println("</tr>");
-		out.println("</table>");
-		out.println("<p><input type=\"submit\" value=\"Register\"></p>");
-		out.println("</form>");
-	}
 }

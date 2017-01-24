@@ -24,7 +24,7 @@ import com.pubnub.api.models.consumer.PNStatus;
 
 /** 
  * A servlet that handles orders. doGet() method displays an HTML form with a button and
- * textfileds: number of iPhones
+ * textfileds: name of Customer, their email, the address and the number of iPhones
  * doPost() processes the form: it publishes to the Channel and updates the database
  *
  */

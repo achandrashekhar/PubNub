@@ -7,6 +7,11 @@ import com.pubnub.api.models.consumer.PNPublishResult;
 import com.pubnub.api.models.consumer.PNStatus;
 import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 
+/**
+ * Another test program I made when dabbling around with the API
+ * @author ashi
+ *
+ */
 public class Subscriber {
 	public void message(PubNub pubnub, PNMessageResult message) {
     	System.out.println("Message received by object : "+pubnub.getInstanceId()+" " + message.getMessage().getAsString());

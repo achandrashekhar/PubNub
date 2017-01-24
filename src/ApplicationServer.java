@@ -7,7 +7,12 @@ import org.eclipse.jetty.servlet.ServletHandler;
 import com.pubnub.api.PNConfiguration;
 import com.pubnub.api.PubNub;
 
-
+/**
+ * This is where you start the server!
+ * All the endpoints on the website have been added here
+ * @author ashi
+ *
+ */
 public class ApplicationServer {
 	private static int PORT = 8080;
 	
@@ -17,15 +22,6 @@ public class ApplicationServer {
 		
 		
 		Server server = new Server(PORT);
-
-		ServletHandler handler = new ServletHandler();
-		//server.setHandler(handler);
-
-//		handler.addServletWithMapping(RegistrationServlet.class, "/register");
-//		handler.addServletWithMapping(LoginServlet.class,"/login");
-//		handler.addServletWithMapping(DisplayHotelsServlet.class,"/hotels");
-//		handler.addServletWithMapping(ReviewServlet.class,"/reviews");
-		// other servlets can be added as needed such as LoginServlet etc.
 		
 		ServletContextHandler servletContextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
 		servletContextHandler.addServlet(RegistrationServlet.class, "/register");
@@ -33,18 +29,7 @@ public class ApplicationServer {
 		servletContextHandler.addServlet(LoginServlet.class,"/");
 		servletContextHandler.addServlet(PlaceOrder.class,"/placeOrder");
 		servletContextHandler.addServlet(Confirmation.class,"/confirmation");
-		servletContextHandler.addServlet(LogoutServlet.class,"/logout");
-//		servletContextHandler.addServlet(HotelInfo.class,"/hotelInfo");
-//		servletContextHandler.addServlet(RegisterErrorServlet.class,"/registrationError");
-//		servletContextHandler.addServlet(SerchByCityStateCountryServlet.class,"/searchByCityStateCountry");
-//		servletContextHandler.addServlet(SavedHotelsServlet.class,"/savedhotels");
-//		servletContextHandler.addServlet(DisplaySavedHotelsServlet.class,"/showsavedhotels");
-//		servletContextHandler.addServlet(touristAttractionListServlet.class,"/attractions");
-//		servletContextHandler.addServlet(SortReviewsBy.class,"/sortreviewsby");
-//		servletContextHandler.addServlet(ClearSavedHotelsAndLinks.class,"/clearhotellist");
-//		servletContextHandler.addServlet(SaveVisitedExpediaLinks.class,"/savehotellink");
-//		servletContextHandler.addServlet(DisplaySavedHotelsFromNAvBar.class,"/savedhotelsfromnavbar");
-//		
+		servletContextHandler.addServlet(LogoutServlet.class,"/logout");		
 		server.setHandler(servletContextHandler);
 		try {
 			server.start();

@@ -9,6 +9,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Random;
 
+/**
+ * This class handles all the Communication with the Database, read write and updates!
+ * @author ashi
+ *
+ */
 public class HandleDB {
 	private static HandleDB singleton = new HandleDB();
 	
