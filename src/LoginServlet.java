@@ -66,12 +66,6 @@ public class LoginServlet extends BaseServlet {
 		// Get data from the textfields of the html form
 		String newuser = request.getParameter("user");
 		String newpass = request.getParameter("pass");
-		// sanitize user input to avoid XSS attacks:
-//		newuser = StringEscapeUtils.escapeHtml4(newuser);
-//		newpass = StringEscapeUtils.escapeHtml4(newpass);
-//		
-		// add user's info to the database 
-		//Status status = dbhandler.loginUser(newuser, newpass);
 		Status status = Status.INVALID_LOGIN;
 		//if(status == Status.OK) { // registration was successful
 		if(newuser.equals("testuser")&&newpass.equals("Testpwd1*")){
@@ -81,8 +75,7 @@ public class LoginServlet extends BaseServlet {
 		
 			String url = "/placeOrder";
 			url = response.encodeRedirectURL(url);
-			response.sendRedirect(url); // send a get request  (redirect to the same path)
-			//response.encodeRedirectURL("/hotels");
+			response.sendRedirect(url); 
 			
 		}
 		else { // if something went wrong

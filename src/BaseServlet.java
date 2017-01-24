@@ -98,6 +98,7 @@ public class BaseServlet extends HttpServlet {
 			writer.println();
 			writer.println("<p> </p>");
 			writer.println("<p style=\"font-size: 10pt; font-style: italic;\">");
+			writer.println("<div style=\"position: width: 600px; height: 800px;\"><div style=\"position: absolute; bottom: 5px; background-color: gray\">");
 			writer.println("Last updated at " + getDate());
 			writer.println("</p>");
 			writer.println("</body>");

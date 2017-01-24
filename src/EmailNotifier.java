@@ -13,7 +13,7 @@ import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
 
 /**
- * This class is a subscriber to the OrderChannel and as soon as a user places an order, this subscriber will recieve the details
+ * This class is a subscriber to the OrderChannel and as soon as a user places an order, this subscriber will receive the details
  * and send out the email instantly
  * @author ashi
  *

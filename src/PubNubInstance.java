@@ -2,7 +2,7 @@ import com.pubnub.api.PNConfiguration;
 import com.pubnub.api.PubNub;
 
 /**
- * This class will return a PubNub instance with all theredentials
+ * This class will return a PubNub instance with all the credentials
  * I didn't want to keep making an instance again and again so used the singleton pattern!
  * @author ashi
  *

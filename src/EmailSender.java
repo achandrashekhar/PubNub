@@ -1,7 +1,11 @@
 import javax.mail.*;
 import javax.mail.internet.*;
 import java.util.*;
-
+/**
+ * This class send out the email as soon as it receives the message on the channel 
+ * @author ashi
+ *
+ */
 public class EmailSender {
 
     final String senderEmail = "testemailforproject55@gmail.com";
@@ -58,9 +62,5 @@ public class EmailSender {
             return new PasswordAuthentication(senderEmail, senderPassword);
         }
     }
-
-//    public static void main(String[] args) {
-//        EmailSender send = new EmailSender("ashi5393@gmail.com", "Test Email", "Hello Ash!");
-//    }
 
 }
