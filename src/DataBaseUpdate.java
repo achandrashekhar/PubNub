@@ -8,7 +8,12 @@ import com.pubnub.api.callbacks.SubscribeCallback;
 import com.pubnub.api.models.consumer.PNStatus;
 import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
-
+/**
+ * This Class is the second subscriber to the order channel and will write to the DataBase as soon as it receives
+ * the message 
+ * @author ashi
+ *
+ */
 public class DataBaseUpdate {
 	public static void main(String args[]) {
 		PNConfiguration pnConfiguration = new PNConfiguration();
@@ -33,7 +38,7 @@ public class DataBaseUpdate {
 			@Override
 			public void message(PubNub arg0, PNMessageResult arg1) {
 				JsonObject jsonObjectemailNotifier = new JsonObject();
-				System.out.println(arg1.getMessage().getAsJsonObject());
+				System.out.println(arg1.getMessage().getAsJsonObject()); //retrieve msg from the channel
 				jsonObjectemailNotifier = arg1.getMessage().getAsJsonObject();
 				JsonElement jsonCustName = jsonObjectemailNotifier.get("custName");
 				String custName = jsonCustName.toString();

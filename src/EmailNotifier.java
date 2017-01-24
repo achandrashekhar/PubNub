@@ -11,10 +11,16 @@ import com.pubnub.api.callbacks.SubscribeCallback;
 import com.pubnub.api.models.consumer.PNStatus;
 import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
-
+/**
+ * This class is a subscriber to the OrderChannel and as soon as a user places an order, this subscriber will recieve the details
+ * and send out the email instantly
+ * @author ashi
+ *
+ */
 public class EmailNotifier {
 	public static void main(String args[]) {
 		PNConfiguration pnConfiguration = new PNConfiguration();
+		//These were the credentials provided to me when I signed up at PubNub
 		pnConfiguration.setSubscribeKey("sub-c-e77a90ba-ddaa-11e6-ac93-02ee2ddab7fe");
 		pnConfiguration.setPublishKey("pub-c-e4a6db26-6717-4b8f-8b0f-0441c4a5265a");  
 		PubNub pubnub = new PubNub(pnConfiguration);
@@ -37,11 +43,11 @@ public class EmailNotifier {
 			public void message(PubNub arg0, PNMessageResult arg1) {
 				JsonObject jsonObjectemailNotifier = new JsonObject();
 				System.out.println(arg1.getMessage().getAsJsonObject());
-				jsonObjectemailNotifier = arg1.getMessage().getAsJsonObject();
+				jsonObjectemailNotifier = arg1.getMessage().getAsJsonObject(); //retrieve the message from the channel
 				JsonElement jsonCustName = jsonObjectemailNotifier.get("custName");
-				String custName = jsonCustName.toString();
+				String custName = jsonCustName.toString().replaceAll("\"", "");
 				JsonElement jsonaddress = jsonObjectemailNotifier.get("address");
-				String address = jsonaddress.toString();
+				String address = jsonaddress.toString().replaceAll("\"", "");
 				JsonElement jsonemailId = jsonObjectemailNotifier.get("email");
 				String id = jsonemailId.toString();
 				JsonElement jsonquantity = jsonObjectemailNotifier.get("quantity");

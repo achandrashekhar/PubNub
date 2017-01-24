@@ -23,10 +23,7 @@ import com.pubnub.api.models.consumer.PNStatus;
 //import org.apache.commons.lang3.StringEscapeUtils;
 
 /** 
- * A servlet that handles orders. doGet() method displays an HTML form with a button and
- * textfileds: number of iPhones
- * doPost() processes the form: it publishes to the Channel and updates the database
- *
+ * A servlet that renders the order confirmation page
  */
 @SuppressWarnings("serial")
 public class Confirmation extends BaseServlet {

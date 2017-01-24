@@ -1,7 +1,12 @@
 import javax.mail.*;
 import javax.mail.internet.*;
 import java.util.*;
-
+/**
+ * This class sends put the email and is called by the
+ * emailNotifier subscriber
+ * @author ashi
+ *
+ */
 public class EmailSender {
 
     final String senderEmail = "testemailforproject55@gmail.com";
@@ -52,9 +57,4 @@ public class EmailSender {
             return new PasswordAuthentication(senderEmail, senderPassword);
         }
     }
-
-//    public static void main(String[] args) {
-//        EmailSender send = new EmailSender("ashi5393@gmail.com", "Test Email", "Hello Ash!");
-//    }
-
 }

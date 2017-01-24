@@ -24,7 +24,7 @@ import com.pubnub.api.models.consumer.PNStatus;
 
 /** 
  * A servlet that handles orders. doGet() method displays an HTML form with a button and
- * textfileds: number of iPhones
+ * textfileds: name of Customer, their email, the address and the number of iPhones
  * doPost() processes the form: it publishes to the Channel and updates the database
  *
  */
@@ -60,10 +60,7 @@ public class PlaceOrder extends BaseServlet {
         Template t = ve.getTemplate( "HTML_PAGES/PlaceOrderForm.html" );
         /*  create a context and add data */
         VelocityContext context = new VelocityContext();
-  
         t.merge( context, out );
-
-		//displayForm(out); 
 		finishResponse(response,request);
 	}
 
@@ -107,30 +104,6 @@ public class PlaceOrder extends BaseServlet {
 		String url = "/confirmation";
 		url = response.encodeRedirectURL(url);
 		response.sendRedirect(url);
-		
-		// sanitize user input to avoid XSS attacks:
-//		newuser = StringEscapeUtils.escapeHtml4(newuser);
-//		newpass = StringEscapeUtils.escapeHtml4(newpass);
-////		
-//		// add user's info to the database 
-//		Status status = dbhandler.recordOrder(newuser, selectedItem);
-//		
-//		if(status == Status.OK) { // registration was successful
-//			response.getWriter().println("Login is Successful.");
-//			HttpSession session = request.getSession();
-//			session.setAttribute("username", newuser);
-//		
-//			String url = "/placeorder";
-//			url = response.encodeRedirectURL(url);
-//			response.sendRedirect(url); // send a get request  (redirect to the same path)
-//			//response.encodeRedirectURL("/hotels");
-//			
-//		}
-//		else { // if something went wrong
-//			String url = "/login?error=" + status.name();
-//			url = response.encodeRedirectURL(url);
-//			response.sendRedirect(url); // send a get request  (redirect to the same path)
-//		}
 	}
 
 	

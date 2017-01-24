@@ -23,13 +23,14 @@ import org.apache.velocity.app.VelocityEngine;
 //import org.apache.logging.log4j.Logger;
 
 /**
- * Provides base functionality to all servlets in this example. 
+ * Provides base functionality to all servlets in this example. Renders the Navigation page
+ * and the footer
  *
  * @see ApplicationServer
  */
 @SuppressWarnings("serial")
 public class BaseServlet extends HttpServlet {
-	//private static final DatabaseHandler dbhandler = DatabaseHandler.getInstance();
+	
 
 	protected void prepareResponse(String title, HttpServletResponse response, HttpServletRequest request) {
 		try {
@@ -99,7 +100,9 @@ public class BaseServlet extends HttpServlet {
 			writer.println();
 			writer.println("<p> </p>");
 			writer.println("<p style=\"font-size: 10pt; font-style: italic;\">");
+			writer.println("<div style=\"position: width: 600px; height: 800px;\"><div style=\"position: absolute; bottom: 5px; background-color: gray\">");
 			writer.println("Last updated at " + getDate());
+			writer.println("</div></div>");
 			writer.println("</p>");
 			writer.println("</body>");
 			writer.println("</html>");

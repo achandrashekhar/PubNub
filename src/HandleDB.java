@@ -8,7 +8,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Random;
-
+/**
+ * This class handles all the Communication with the Database, read write and updates!
+ * @author ashi
+ *
+ */
 public class HandleDB {
 	private static HandleDB singleton = new HandleDB();
 	
@@ -313,11 +317,19 @@ public class HandleDB {
 		return status;
 	}
 	
-	public Status recordOrder(String username,int selectedItem){
-		
-		return null;
-		
-	}
+/**
+ * This method will write all the order details to the Database table orders
+ * This method will be called by the DatabaseUpdater subscriber
+ * @param custName
+ * 			-The name of the customer
+ * @param emailId
+ * 			-email Id to which the email needs to be sent to
+ * @param address
+ * 			-the address of the customer
+ * @param quantity
+ * 			-The number of iphones
+ * All this is retrieved from the order form
+ */
 	
 	public void writeToDataBase(String custName, String emailId, String address, String quantity){
 		int quantityInt = Integer.parseInt(quantity);
